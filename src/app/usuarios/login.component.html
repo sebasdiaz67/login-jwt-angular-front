@@ -1,0 +1,61 @@
+<div class="card border-primary text-center">
+    <div class="card-header">{{titulo}}</div>
+    <div class="card-body">
+
+        <center>
+            <form method="post" *ngIf="!mostrarFormulario">
+                <div class="form-group col-sm-6">
+                    <input [(ngModel)]="usuario.nombreUsuario" type="text" class="form-control" name="username" id="username"
+                        placeholder="Username" autofocus required>
+                </div>
+    
+                <div class="form-group col-sm-6">
+                    <input [(ngModel)]="usuario.contrasenia" type="password" class="form-control" name="password" id="password"
+                        placeholder="Password" required>
+                </div>
+    
+                <div class="form-group col-sm-6">
+                    <input (click)='login()' type="submit" class="btn btn-lg btn-primary btn-block" value="Login">
+                    <input (click)='crearUsuario()' type="submit" class="btn btn-lg btn-primary btn-block" value="Crear usuario">
+                </div>
+            </form>
+
+            <form method="post" *ngIf="mostrarFormulario">
+                <div class="form-group col-sm-6">
+                    <input [(ngModel)]="usuario.identificacion" type="text" class="form-control" name="identificacion" id="identificacion"
+                        placeholder="Identificacion" autofocus required min="10" maxlength="10">
+                </div>
+
+                <div class="form-group col-sm-6">
+                    <input [(ngModel)]="usuario.nombre" type="text" class="form-control" name="nombre" id="nombre"
+                        placeholder="Nombre" autofocus required>
+                </div>
+
+                <div class="form-group col-sm-6">
+                    <input [(ngModel)]="usuario.nombreUsuario" type="text" class="form-control" name="username" id="username"
+                        placeholder="Username" autofocus required min="4" max="8">
+                </div>
+    
+                <div class="form-group col-sm-6">
+                    <input [(ngModel)]="usuario.contrasenia" type="password" class="form-control" name="password" id="password"
+                        placeholder="Password" required min="8">
+                </div>
+
+                <div class="form-group col-sm-6">
+                    <input [(ngModel)]="usuario.edad" type="number" class="form-control" name="edad" id="edad"
+                        placeholder="Edad" autofocus required>
+                </div>
+
+                <div class="form-group col-sm-6">
+                    <input [(ngModel)]="usuario.ciudad" type="text" class="form-control" name="ciudad" id="ciudad"
+                        placeholder="Ciudad" autofocus>
+                </div>
+    
+                <div class="form-group col-sm-6">
+                    <input (click)='guardar()' type="submit" class="btn btn-lg btn-primary btn-block" value="Guardar">
+                    <input (click)='cancelar()' type="submit" class="btn btn-lg btn-primary btn-block" value="Cancelar">
+                </div>
+            </form>
+        </center>
+    </div>
+</div>
